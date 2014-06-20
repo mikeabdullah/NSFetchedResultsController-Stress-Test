@@ -9,6 +9,10 @@
 #import "FSTMasterViewController.h"
 
 
+#define MOVE_ROWS 0
+#define RELOAD_ROWS 0
+
+
 @interface FSTMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -180,15 +184,21 @@
             
         case NSFetchedResultsChangeUpdate:
             NSLog(@"Updating cell at %@.%@ to %@", @(indexPath.section), @(indexPath.row), [anObject valueForKey:@"number"]);
+#if RELOAD_ROWS
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+#else
             [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
-//            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+#endif
             break;
             
         case NSFetchedResultsChangeMove:
             NSLog(@"Moving cell at %@.%@ to %@.%@, value %@", @(indexPath.section), @(indexPath.row), @(newIndexPath.section), @(newIndexPath.row), [anObject valueForKey:@"number"]);
-//            [tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
+#if MOVE_ROWS
+            [tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
+#else
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+#endif
             break;
     }
     
