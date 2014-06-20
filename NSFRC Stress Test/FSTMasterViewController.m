@@ -11,6 +11,7 @@
 
 // Initial Configuration
 #define NUMBER_INITIAL_OBJECTS 10
+#define USE_PREDICATE 0
 
 // Things to try changing in the model
 #define INSERT_OBJECTS 0
@@ -70,7 +71,9 @@
 }
 
 - (void)makeRandomChanges {
-    NSArray *objects = self.fetchedResultsController.fetchedObjects;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Thing"];
+    NSArray *objects = [self.fetchedResultsController.managedObjectContext executeFetchRequest:request error:NULL];
+    
     
 #if CHECK_CELLS
     // Check table view is correct first. Run this here, rather than at the end of changes so that
@@ -158,6 +161,11 @@
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
+    
+#if USE_PREDICATE
+    // Filter
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"number < 50"];
+#endif
     
     // Edit the sort key as appropriate.
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
