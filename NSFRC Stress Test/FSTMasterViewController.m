@@ -13,6 +13,7 @@
 #define INSERT_OBJECTS 0
 #define MAX_INSERTIONS 3
 #define DELETE_OBJECTS 0
+#define EDIT_INTERVAL 1
 
 // How to respond to FRC changes
 #define MOVE_ROWS 0
@@ -61,7 +62,7 @@
     }
     
     
-    NSTimer *timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(makeRandomChanges) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer timerWithTimeInterval:EDIT_INTERVAL target:self selector:@selector(makeRandomChanges) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
 
