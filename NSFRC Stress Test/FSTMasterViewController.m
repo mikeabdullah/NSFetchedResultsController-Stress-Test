@@ -9,6 +9,9 @@
 #import "FSTMasterViewController.h"
 
 
+// Initial Configuration
+#define NUMBER_INITIAL_OBJECTS 10
+
 // Things to try changing in the model
 #define INSERT_OBJECTS 0
 #define MAX_INSERTIONS 3
@@ -47,7 +50,7 @@
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     
-    for (NSUInteger i=0; i<10; i++) {
+    for (NSUInteger i=0; i<NUMBER_INITIAL_OBJECTS; i++) {
         NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
         [newManagedObject setValue:@(rand() % 100 + 1) forKey:@"number"];
     }
