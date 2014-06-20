@@ -18,6 +18,9 @@
 #define MOVE_ROWS 0
 #define RELOAD_ROWS 0
 
+// Checks to run
+#define CHECK_CELLS 1
+
 
 @interface FSTMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -65,6 +68,7 @@
 - (void)makeRandomChanges {
     NSArray *objects = self.fetchedResultsController.fetchedObjects;
     
+#if CHECK_CELLS
     // Check table view is correct first. Run this here, rather than at the end of changes so that
     // animations should have finished
     for (NSIndexPath *aPath in self.tableView.indexPathsForVisibleRows) {
@@ -72,6 +76,7 @@
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:aPath];
         NSAssert([cell.textLabel.text isEqual:[[object valueForKey:@"number"] description]], @"");
     }
+#endif
     
     
 #if INSERT_OBJECTS
