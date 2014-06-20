@@ -61,14 +61,11 @@
     
     // Check table view is correct first. Run this here, rather than at the end of changes so that
     // animations should have finished
-    [self.fetchedResultsController.sections enumerateObjectsUsingBlock:^(id <NSFetchedResultsSectionInfo> aSection, NSUInteger section, BOOL *stop) {
-        [aSection.objects enumerateObjectsUsingBlock:^(NSManagedObject *anObject, NSUInteger row, BOOL *stop) {
-            
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
-            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-            NSAssert([cell.textLabel.text isEqual:[[anObject valueForKey:@"number"] description]], @"");
-        }];
-    }];
+    for (NSIndexPath *aPath in self.tableView.indexPathsForVisibleRows) {
+        NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:aPath];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:aPath];
+        NSAssert([cell.textLabel.text isEqual:[[object valueForKey:@"number"] description]], @"");
+    }
     
     
     for (NSManagedObject *anObject in objects) {
