@@ -9,6 +9,10 @@
 #import "FSTMasterViewController.h"
 
 
+// Things to try changing in the model
+#define INSERT_OBJECTS 0
+
+// How to respond to FRC changes
 #define MOVE_ROWS 0
 #define RELOAD_ROWS 0
 
@@ -68,6 +72,17 @@
     }
     
     
+#if INSERT_OBJECTS
+    // Add in some new objects
+    NSUInteger numberToInsert = rand() % 4;
+    for (NSUInteger i=0; i<numberToInsert; i++) {
+        NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Thing" inManagedObjectContext:self.fetchedResultsController.managedObjectContext];
+        [newManagedObject setValue:@(rand() % 100 + 1) forKey:@"number"];
+    }
+#endif
+    
+    
+    // Update some existing objects
     for (NSManagedObject *anObject in objects) {
         
         if (rand() % 10 == 0) {
@@ -172,6 +187,7 @@
     
     switch(type) {
         case NSFetchedResultsChangeInsert:
+            NSLog(@"Inserting cell at %@.%@, value %@", @(newIndexPath.section), @(newIndexPath.row), [anObject valueForKey:@"number"]);
             [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
