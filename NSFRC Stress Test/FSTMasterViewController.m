@@ -11,6 +11,7 @@
 
 // Things to try changing in the model
 #define INSERT_OBJECTS 0
+#define MAX_INSERTIONS 3
 #define DELETE_OBJECTS 0
 
 // How to respond to FRC changes
@@ -75,7 +76,7 @@
     
 #if INSERT_OBJECTS
     // Add in some new objects
-    NSUInteger numberToInsert = rand() % 4;
+    NSUInteger numberToInsert = rand() % (MAX_INSERTIONS + 1);
     for (NSUInteger i=0; i<numberToInsert; i++) {
         NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Thing" inManagedObjectContext:self.fetchedResultsController.managedObjectContext];
         [newManagedObject setValue:@(rand() % 100 + 1) forKey:@"number"];
