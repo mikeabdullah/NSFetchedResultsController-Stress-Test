@@ -23,6 +23,7 @@
 // How to respond to FRC changes
 #define MOVE_ROWS 0
 #define RELOAD_ROWS 0
+#define DELAY_UPDATING_CELLS 0
 
 // Checks to run
 #define CHECK_CELLS 1
@@ -238,15 +239,21 @@
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
-        case NSFetchedResultsChangeUpdate:
+        case NSFetchedResultsChangeUpdate: {
             NSLog(@"Updating cell at %@.%@ to %@", @(indexPath.section), @(indexPath.row), [anObject valueForKey:@"number"]);
 #if RELOAD_ROWS
             [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 #else
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+#if DELAY_UPDATING_CELLS
+            dispatch_async(dispatch_get_main_queue(), ^{
+#endif
+                [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+#if DELAY_UPDATING_CELLS
+            });
+#endif
 #endif
             break;
-            
+        }
         case NSFetchedResultsChangeMove:
             NSLog(@"Moving cell at %@.%@ to %@.%@, value %@", @(indexPath.section), @(indexPath.row), @(newIndexPath.section), @(newIndexPath.row), [anObject valueForKey:@"number"]);
 #if MOVE_ROWS
