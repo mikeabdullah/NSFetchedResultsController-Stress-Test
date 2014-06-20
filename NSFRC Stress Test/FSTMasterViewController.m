@@ -12,6 +12,7 @@
 // Initial Configuration
 #define NUMBER_INITIAL_OBJECTS 10
 #define USE_PREDICATE 0
+#define SPLIT_INTO_SECTIONS 0
 
 // Things to try changing in the model
 #define INSERT_OBJECTS 0
@@ -81,7 +82,7 @@
     for (NSIndexPath *aPath in self.tableView.indexPathsForVisibleRows) {
         NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:aPath];
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:aPath];
-        NSAssert([cell.textLabel.text isEqual:[[object valueForKey:@"number"] description]], @"");
+        if (cell) NSAssert([cell.textLabel.text isEqual:[[object valueForKey:@"number"] description]], @"");
     }
 #endif
     
@@ -146,6 +147,13 @@
     return cell;
 }
 
+#if SPLIT_INTO_SECTIONS
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    id <NSFetchedResultsSectionInfo> info = self.fetchedResultsController.sections[section];
+    return info.name;
+}
+#endif
+
 #pragma mark - Fetched results controller
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -173,9 +181,13 @@
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+#if SPLIT_INTO_SECTIONS
+    NSString *sectionKeyPath = @"fst_sectionName";
+#else
+    NSString *sectionKeyPath = nil;
+#endif
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:sectionKeyPath cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
@@ -268,6 +280,18 @@
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"number"] description];
+}
+
+@end
+
+
+@implementation NSManagedObject (StressTest)
+
+- (NSString *)fst_sectionName {
+//    return @"foo";
+    NSNumber *number = [self valueForKey:@"number"];
+    NSString *result = [NSString stringWithFormat:@"%@x", @(number.unsignedIntegerValue / 10)];
+    return result;
 }
 
 @end
