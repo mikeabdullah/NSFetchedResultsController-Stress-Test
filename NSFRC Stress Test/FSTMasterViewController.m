@@ -16,7 +16,7 @@
 #define INSERT_OBJECTS 0
 #define MAX_INSERTIONS 3
 #define DELETE_OBJECTS 0
-#define EDIT_INTERVAL 1
+#define EDIT_INTERVAL 0.5
 
 // How to respond to FRC changes
 #define MOVE_ROWS 0
