@@ -204,6 +204,7 @@
             break;
             
         case NSFetchedResultsChangeDelete:
+            NSLog(@"Deleting cell at %@.%@", @(indexPath.section), @(indexPath.row));
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
