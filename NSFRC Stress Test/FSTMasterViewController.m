@@ -186,9 +186,9 @@
             
         case NSFetchedResultsChangeMove:
             NSLog(@"Moving cell at %@.%@ to %@.%@, value %@", @(indexPath.section), @(indexPath.row), @(newIndexPath.section), @(newIndexPath.row), [anObject valueForKey:@"number"]);
-            [tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
-//            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+//            [tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
     
