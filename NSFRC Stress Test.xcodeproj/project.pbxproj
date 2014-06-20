@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		270E1748195422D800937E08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E1747195422D800937E08 /* Foundation.framework */; };
+		270E174A195422D800937E08 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E1749195422D800937E08 /* CoreGraphics.framework */; };
+		270E174C195422D800937E08 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E174B195422D800937E08 /* UIKit.framework */; };
+		270E174E195422D800937E08 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E174D195422D800937E08 /* CoreData.framework */; };
+		270E1754195422D900937E08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 270E1752195422D900937E08 /* InfoPlist.strings */; };
+		270E1756195422D900937E08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E1755195422D900937E08 /* main.m */; };
+		270E175A195422D900937E08 /* FSTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E1759195422D900937E08 /* FSTAppDelegate.m */; };
+		270E175D195422D900937E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270E175B195422D900937E08 /* Main.storyboard */; };
+		270E1760195422D900937E08 /* NSFRC_Stress_Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 270E175E195422D900937E08 /* NSFRC_Stress_Test.xcdatamodeld */; };
+		270E1763195422D900937E08 /* FSTMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E1762195422D900937E08 /* FSTMasterViewController.m */; };
+		270E1768195422D900937E08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270E1767195422D900937E08 /* Images.xcassets */; };
+		270E176F195422D900937E08 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E176E195422D900937E08 /* XCTest.framework */; };
+		270E1770195422D900937E08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E1747195422D800937E08 /* Foundation.framework */; };
+		270E1771195422D900937E08 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E174B195422D800937E08 /* UIKit.framework */; };
+		270E1772195422D900937E08 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270E174D195422D800937E08 /* CoreData.framework */; };
+		270E177A195422D900937E08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 270E1778195422D900937E08 /* InfoPlist.strings */; };
+		270E177C195422D900937E08 /* NSFRC_Stress_TestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 270E177B195422D900937E08 /* NSFRC_Stress_TestTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		270E1773195422D900937E08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 270E173C195422D800937E08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 270E1743195422D800937E08;
+			remoteInfo = "NSFRC Stress Test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		270E1744195422D800937E08 /* NSFRC Stress Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NSFRC Stress Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		270E1747195422D800937E08 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		270E1749195422D800937E08 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		270E174B195422D800937E08 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		270E174D195422D800937E08 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		270E1751195422D900937E08 /* NSFRC Stress Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSFRC Stress Test-Info.plist"; sourceTree = "<group>"; };
+		270E1753195422D900937E08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		270E1755195422D900937E08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		270E1757195422D900937E08 /* NSFRC Stress Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFRC Stress Test-Prefix.pch"; sourceTree = "<group>"; };
+		270E1758195422D900937E08 /* FSTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSTAppDelegate.h; sourceTree = "<group>"; };
+		270E1759195422D900937E08 /* FSTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSTAppDelegate.m; sourceTree = "<group>"; };
+		270E175C195422D900937E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		270E175F195422D900937E08 /* NSFRC_Stress_Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NSFRC_Stress_Test.xcdatamodel; sourceTree = "<group>"; };
+		270E1761195422D900937E08 /* FSTMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSTMasterViewController.h; sourceTree = "<group>"; };
+		270E1762195422D900937E08 /* FSTMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSTMasterViewController.m; sourceTree = "<group>"; };
+		270E1767195422D900937E08 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		270E176D195422D900937E08 /* NSFRC Stress TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NSFRC Stress TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		270E176E195422D900937E08 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		270E1777195422D900937E08 /* NSFRC Stress TestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSFRC Stress TestTests-Info.plist"; sourceTree = "<group>"; };
+		270E1779195422D900937E08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		270E177B195422D900937E08 /* NSFRC_Stress_TestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSFRC_Stress_TestTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		270E1741195422D800937E08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270E174A195422D800937E08 /* CoreGraphics.framework in Frameworks */,
+				270E174E195422D800937E08 /* CoreData.framework in Frameworks */,
+				270E174C195422D800937E08 /* UIKit.framework in Frameworks */,
+				270E1748195422D800937E08 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		270E176A195422D900937E08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270E176F195422D900937E08 /* XCTest.framework in Frameworks */,
+				270E1772195422D900937E08 /* CoreData.framework in Frameworks */,
+				270E1771195422D900937E08 /* UIKit.framework in Frameworks */,
+				270E1770195422D900937E08 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		270E173B195422D800937E08 = {
+			isa = PBXGroup;
+			children = (
+				270E174F195422D900937E08 /* NSFRC Stress Test */,
+				270E1775195422D900937E08 /* NSFRC Stress TestTests */,
+				270E1746195422D800937E08 /* Frameworks */,
+				270E1745195422D800937E08 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		270E1745195422D800937E08 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				270E1744195422D800937E08 /* NSFRC Stress Test.app */,
+				270E176D195422D900937E08 /* NSFRC Stress TestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		270E1746195422D800937E08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				270E1747195422D800937E08 /* Foundation.framework */,
+				270E1749195422D800937E08 /* CoreGraphics.framework */,
+				270E174B195422D800937E08 /* UIKit.framework */,
+				270E174D195422D800937E08 /* CoreData.framework */,
+				270E176E195422D900937E08 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		270E174F195422D900937E08 /* NSFRC Stress Test */ = {
+			isa = PBXGroup;
+			children = (
+				270E1758195422D900937E08 /* FSTAppDelegate.h */,
+				270E1759195422D900937E08 /* FSTAppDelegate.m */,
+				270E175B195422D900937E08 /* Main.storyboard */,
+				270E1761195422D900937E08 /* FSTMasterViewController.h */,
+				270E1762195422D900937E08 /* FSTMasterViewController.m */,
+				270E1767195422D900937E08 /* Images.xcassets */,
+				270E175E195422D900937E08 /* NSFRC_Stress_Test.xcdatamodeld */,
+				270E1750195422D900937E08 /* Supporting Files */,
+			);
+			path = "NSFRC Stress Test";
+			sourceTree = "<group>";
+		};
+		270E1750195422D900937E08 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				270E1751195422D900937E08 /* NSFRC Stress Test-Info.plist */,
+				270E1752195422D900937E08 /* InfoPlist.strings */,
+				270E1755195422D900937E08 /* main.m */,
+				270E1757195422D900937E08 /* NSFRC Stress Test-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		270E1775195422D900937E08 /* NSFRC Stress TestTests */ = {
+			isa = PBXGroup;
+			children = (
+				270E177B195422D900937E08 /* NSFRC_Stress_TestTests.m */,
+				270E1776195422D900937E08 /* Supporting Files */,
+			);
+			path = "NSFRC Stress TestTests";
+			sourceTree = "<group>";
+		};
+		270E1776195422D900937E08 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				270E1777195422D900937E08 /* NSFRC Stress TestTests-Info.plist */,
+				270E1778195422D900937E08 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		270E1743195422D800937E08 /* NSFRC Stress Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 270E177F195422D900937E08 /* Build configuration list for PBXNativeTarget "NSFRC Stress Test" */;
+			buildPhases = (
+				270E1740195422D800937E08 /* Sources */,
+				270E1741195422D800937E08 /* Frameworks */,
+				270E1742195422D800937E08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NSFRC Stress Test";
+			productName = "NSFRC Stress Test";
+			productReference = 270E1744195422D800937E08 /* NSFRC Stress Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		270E176C195422D900937E08 /* NSFRC Stress TestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 270E1782195422D900937E08 /* Build configuration list for PBXNativeTarget "NSFRC Stress TestTests" */;
+			buildPhases = (
+				270E1769195422D900937E08 /* Sources */,
+				270E176A195422D900937E08 /* Frameworks */,
+				270E176B195422D900937E08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				270E1774195422D900937E08 /* PBXTargetDependency */,
+			);
+			name = "NSFRC Stress TestTests";
+			productName = "NSFRC Stress TestTests";
+			productReference = 270E176D195422D900937E08 /* NSFRC Stress TestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		270E173C195422D800937E08 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FST;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Karelia;
+				TargetAttributes = {
+					270E176C195422D900937E08 = {
+						TestTargetID = 270E1743195422D800937E08;
+					};
+				};
+			};
+			buildConfigurationList = 270E173F195422D800937E08 /* Build configuration list for PBXProject "NSFRC Stress Test" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 270E173B195422D800937E08;
+			productRefGroup = 270E1745195422D800937E08 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				270E1743195422D800937E08 /* NSFRC Stress Test */,
+				270E176C195422D900937E08 /* NSFRC Stress TestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		270E1742195422D800937E08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270E1768195422D900937E08 /* Images.xcassets in Resources */,
+				270E1754195422D900937E08 /* InfoPlist.strings in Resources */,
+				270E175D195422D900937E08 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		270E176B195422D900937E08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270E177A195422D900937E08 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		270E1740195422D800937E08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270E1763195422D900937E08 /* FSTMasterViewController.m in Sources */,
+				270E175A195422D900937E08 /* FSTAppDelegate.m in Sources */,
+				270E1756195422D900937E08 /* main.m in Sources */,
+				270E1760195422D900937E08 /* NSFRC_Stress_Test.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		270E1769195422D900937E08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270E177C195422D900937E08 /* NSFRC_Stress_TestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		270E1774195422D900937E08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 270E1743195422D800937E08 /* NSFRC Stress Test */;
+			targetProxy = 270E1773195422D900937E08 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		270E1752195422D900937E08 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270E1753195422D900937E08 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		270E175B195422D900937E08 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270E175C195422D900937E08 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		270E1778195422D900937E08 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270E1779195422D900937E08 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		270E177D195422D900937E08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		270E177E195422D900937E08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		270E1780195422D900937E08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSFRC Stress Test/NSFRC Stress Test-Prefix.pch";
+				INFOPLIST_FILE = "NSFRC Stress Test/NSFRC Stress Test-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		270E1781195422D900937E08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSFRC Stress Test/NSFRC Stress Test-Prefix.pch";
+				INFOPLIST_FILE = "NSFRC Stress Test/NSFRC Stress Test-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		270E1783195422D900937E08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NSFRC Stress Test.app/NSFRC Stress Test";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSFRC Stress Test/NSFRC Stress Test-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NSFRC Stress TestTests/NSFRC Stress TestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		270E1784195422D900937E08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NSFRC Stress Test.app/NSFRC Stress Test";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSFRC Stress Test/NSFRC Stress Test-Prefix.pch";
+				INFOPLIST_FILE = "NSFRC Stress TestTests/NSFRC Stress TestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		270E173F195422D800937E08 /* Build configuration list for PBXProject "NSFRC Stress Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270E177D195422D900937E08 /* Debug */,
+				270E177E195422D900937E08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		270E177F195422D900937E08 /* Build configuration list for PBXNativeTarget "NSFRC Stress Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270E1780195422D900937E08 /* Debug */,
+				270E1781195422D900937E08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		270E1782195422D900937E08 /* Build configuration list for PBXNativeTarget "NSFRC Stress TestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270E1783195422D900937E08 /* Debug */,
+				270E1784195422D900937E08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		270E175E195422D900937E08 /* NSFRC_Stress_Test.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				270E175F195422D900937E08 /* NSFRC_Stress_Test.xcdatamodel */,
+			);
+			currentVersion = 270E175F195422D900937E08 /* NSFRC_Stress_Test.xcdatamodel */;
+			path = NSFRC_Stress_Test.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 270E173C195422D800937E08 /* Project object */;
+}
