@@ -11,6 +11,7 @@
 
 // Things to try changing in the model
 #define INSERT_OBJECTS 0
+#define DELETE_OBJECTS 0
 
 // How to respond to FRC changes
 #define MOVE_ROWS 0
@@ -89,6 +90,17 @@
             [anObject setValue:@(rand() % 100 + 1) forKey:@"number"];
         }
     }
+    
+    
+#if DELETE_OBJECTS
+    // Sparingly delete some objects
+    for (NSInteger index=objects.count-1; index>=0; index--) {
+        if (rand() % objects.count == 0) {
+            NSManagedObject *object = objects[index];
+            [self.fetchedResultsController.managedObjectContext deleteObject:object];
+        }
+    }
+#endif
     
     
     [self.fetchedResultsController.managedObjectContext save:NULL];
