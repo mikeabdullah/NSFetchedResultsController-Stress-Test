@@ -26,6 +26,7 @@
 #define DELAY_UPDATING_CELLS 0
 
 // Checks to run
+#define CHECK_FETCHED_OBJECTS 1
 #define CHECK_CELLS 1
 
 
@@ -121,11 +122,13 @@
     [self.fetchedResultsController.managedObjectContext save:NULL];
     
     
+#if CHECK_FETCHED_OBJECTS
     // Check the FRC is correct
     objects = self.fetchedResultsController.fetchedObjects;
     NSArray *sorted = [objects sortedArrayUsingDescriptors:
                        @[[NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES]]];
     NSAssert([sorted isEqual:objects], @"");
+#endif
 }
 
 #pragma mark - Table View
