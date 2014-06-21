@@ -12,7 +12,7 @@
 // Initial Configuration
 #define NUMBER_INITIAL_OBJECTS 10
 #define USE_PREDICATE 0
-#define SPLIT_INTO_SECTIONS 1
+#define SPLIT_INTO_SECTIONS 0
 
 // Things to try changing in the model
 #define INSERT_OBJECTS 0
