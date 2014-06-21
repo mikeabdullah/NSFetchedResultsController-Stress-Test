@@ -289,6 +289,7 @@
     
     
 #if CHECK_SECTIONS
+#if SPLIT_INTO_SECTIONS
     NSUInteger totalObjects = 0;
     
     for (id <NSFetchedResultsSectionInfo> aSection in self.fetchedResultsController.sections) {
@@ -305,6 +306,13 @@
     }
     
     NSAssert(totalObjects == self.fetchedResultsController.fetchedObjects.count, @"You never know, they might differ");
+#else
+    NSArray *sections = self.fetchedResultsController.sections;
+    NSAssert(sections.count <= 1, @"There should be 0 or 1 sections when not divided");
+    
+    id <NSFetchedResultsSectionInfo> section = sections.firstObject;
+    NSAssert([section.objects isEqualToArray:fetched], @"");
+#endif
 #endif
 }
 

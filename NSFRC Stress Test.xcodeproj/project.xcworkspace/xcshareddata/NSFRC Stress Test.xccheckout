@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4CC1FCE8-D220-4AFD-A658-4E94A8105CA3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NSFRC Stress Test</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>86253C6D-7293-4072-9326-D335AE11C96D</key>
+		<string>https://github.com/mikeabdullah/NSFetchedResultsController-Stress-Test.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NSFRC Stress Test.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>86253C6D-7293-4072-9326-D335AE11C96D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mikeabdullah/NSFetchedResultsController-Stress-Test.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>86253C6D-7293-4072-9326-D335AE11C96D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>86253C6D-7293-4072-9326-D335AE11C96D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NSFRC Stress Test</string>
+		</dict>
+	</array>
+</dict>
+</plist>
