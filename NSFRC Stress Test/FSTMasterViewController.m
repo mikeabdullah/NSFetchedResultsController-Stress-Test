@@ -27,6 +27,7 @@
 
 // Checks to run
 #define CHECK_FETCHED_OBJECTS 1
+#define CHECK_SECTIONS 1
 #define CHECK_CELLS 1
 
 
@@ -128,6 +129,13 @@
     NSArray *sorted = [objects sortedArrayUsingDescriptors:
                        @[[NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES]]];
     NSAssert([sorted isEqual:objects], @"");
+#endif
+    
+#if CHECK_SECTIONS
+    for (id <NSFetchedResultsSectionInfo> aSection in self.fetchedResultsController.sections) {
+        NSAssert(aSection.objects.count > 0, @"Don't want empty sections");
+        NSAssert(aSection.numberOfObjects == aSection.objects.count, @"Might as well check the two counts are in sync");
+    }
 #endif
 }
 
