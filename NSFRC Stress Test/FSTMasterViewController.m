@@ -129,38 +129,6 @@
     
     
     [self.fetchedResultsController.managedObjectContext save:NULL];
-    
-    
-#if CHECK_FETCHED_OBJECTS
-    // Check the FRC is correct
-    objects = self.fetchedResultsController.fetchedObjects;
-    NSArray *sorted = [objects sortedArrayUsingDescriptors:
-                       @[[NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES]]];
-    NSAssert([sorted isEqual:objects], @"");
-    
-    NSArray *refetched = [self.fetchedResultsController.managedObjectContext executeFetchRequest:self.fetchedResultsController.fetchRequest error:NULL];
-    NSAssert(refetched.count == objects.count, @"The re-fetched array may not be quite the same as it's indeterminate what happens when two objects have the same number");
-#endif
-    
-    
-#if CHECK_SECTIONS
-    NSUInteger totalObjects = 0;
-    
-    for (id <NSFetchedResultsSectionInfo> aSection in self.fetchedResultsController.sections) {
-        NSAssert(aSection.objects.count > 0, @"Don't want empty sections");
-        NSAssert(aSection.numberOfObjects == aSection.objects.count, @"Might as well check the two counts are in sync");
-        
-        // Check all the objects are in the correct section
-        NSString *name = aSection.name;
-        for (NSManagedObject *anObject in aSection.objects) {
-            totalObjects++;
-            
-            NSAssert([[anObject fst_sectionName] isEqual:name], @"");
-        }
-    }
-    
-    NSAssert(totalObjects == self.fetchedResultsController.fetchedObjects.count, @"You never know, they might differ");
-#endif
 }
 
 #pragma mark - Table View
@@ -306,6 +274,38 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
+    
+    
+#if CHECK_FETCHED_OBJECTS
+    // Check the FRC is correct
+    NSArray *fetched = self.fetchedResultsController.fetchedObjects;
+    NSArray *sorted = [fetched sortedArrayUsingDescriptors:
+                       @[[NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES]]];
+    NSAssert([sorted isEqual:fetched], @"");
+    
+    NSArray *refetched = [self.fetchedResultsController.managedObjectContext executeFetchRequest:self.fetchedResultsController.fetchRequest error:NULL];
+    NSAssert(refetched.count == fetched.count, @"The re-fetched array may not be quite the same as it's indeterminate what happens when two objects have the same number");
+#endif
+    
+    
+#if CHECK_SECTIONS
+    NSUInteger totalObjects = 0;
+    
+    for (id <NSFetchedResultsSectionInfo> aSection in self.fetchedResultsController.sections) {
+        NSAssert(aSection.objects.count > 0, @"Don't want empty sections");
+        NSAssert(aSection.numberOfObjects == aSection.objects.count, @"Might as well check the two counts are in sync");
+        
+        // Check all the objects are in the correct section
+        NSString *name = aSection.name;
+        for (NSManagedObject *anObject in aSection.objects) {
+            totalObjects++;
+            
+            NSAssert([[anObject fst_sectionName] isEqual:name], @"");
+        }
+    }
+    
+    NSAssert(totalObjects == self.fetchedResultsController.fetchedObjects.count, @"You never know, they might differ");
+#endif
 }
 
 /*
