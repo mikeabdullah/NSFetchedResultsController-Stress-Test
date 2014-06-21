@@ -140,6 +140,8 @@
 #endif
     
 #if CHECK_SECTIONS
+    NSUInteger totalObjects = 0;
+    
     for (id <NSFetchedResultsSectionInfo> aSection in self.fetchedResultsController.sections) {
         NSAssert(aSection.objects.count > 0, @"Don't want empty sections");
         NSAssert(aSection.numberOfObjects == aSection.objects.count, @"Might as well check the two counts are in sync");
@@ -147,9 +149,13 @@
         // Check all the objects are in the correct section
         NSString *name = aSection.name;
         for (NSManagedObject *anObject in aSection.objects) {
+            totalObjects++;
+            
             NSAssert([[anObject fst_sectionName] isEqual:name], @"");
         }
     }
+    
+    NSAssert(totalObjects == self.fetchedResultsController.fetchedObjects.count, @"You never know, they might differ");
 #endif
 }
 
