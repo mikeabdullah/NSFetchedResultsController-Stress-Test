@@ -31,6 +31,14 @@
 #define CHECK_CELLS 1
 
 
+@interface NSManagedObject (StressTest)
+- (NSString *)fst_sectionName;
+@end
+
+
+#pragma mark -
+
+
 @interface FSTMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -135,6 +143,12 @@
     for (id <NSFetchedResultsSectionInfo> aSection in self.fetchedResultsController.sections) {
         NSAssert(aSection.objects.count > 0, @"Don't want empty sections");
         NSAssert(aSection.numberOfObjects == aSection.objects.count, @"Might as well check the two counts are in sync");
+        
+        // Check all the objects are in the correct section
+        NSString *name = aSection.name;
+        for (NSManagedObject *anObject in aSection.objects) {
+            NSAssert([[anObject fst_sectionName] isEqual:name], @"");
+        }
     }
 #endif
 }
