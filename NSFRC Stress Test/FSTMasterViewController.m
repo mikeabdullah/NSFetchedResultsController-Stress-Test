@@ -12,7 +12,7 @@
 // Initial Configuration
 #define NUMBER_INITIAL_OBJECTS 10
 #define USE_PREDICATE 0
-#define SPLIT_INTO_SECTIONS 0
+#define SPLIT_INTO_SECTIONS 1
 
 // Things to try changing in the model
 #define INSERT_OBJECTS 0
@@ -137,7 +137,11 @@
     NSArray *sorted = [objects sortedArrayUsingDescriptors:
                        @[[NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES]]];
     NSAssert([sorted isEqual:objects], @"");
+    
+    NSArray *refetched = [self.fetchedResultsController.managedObjectContext executeFetchRequest:self.fetchedResultsController.fetchRequest error:NULL];
+    NSAssert(refetched.count == objects.count, @"The re-fetched array may not be quite the same as it's indeterminate what happens when two objects have the same number");
 #endif
+    
     
 #if CHECK_SECTIONS
     NSUInteger totalObjects = 0;
