@@ -28,7 +28,7 @@
 // Checks to run
 #define CHECK_FETCHED_OBJECTS 1
 #define CHECK_SECTIONS 1
-#define STRICT_SECTION_OBJECTS_CHECK 1
+#define STRICT_SECTION_OBJECTS_CHECK 0
 #define CHECK_CELLS 1
 
 
@@ -307,10 +307,13 @@
         // I've found that very occasionally .numberOfObjects is out of sync with .objects
         // To work around this, consider .numberOfObjects to be the truth
         for (NSUInteger i=0; i<numberOfObjects; i++) {
-            totalObjects++;
             
             NSManagedObject *anObject = aSection.objects[i];
             NSAssert([[anObject fst_sectionName] isEqual:name], @"");
+            
+            NSAssert(anObject == fetched[totalObjects], @"fetchedObjects should tally with section objects");
+            
+            totalObjects++;
         }
         
 #if STRICT_SECTION_OBJECTS_CHECK
