@@ -40,8 +40,8 @@
 
 
 @interface FSTMasterViewController ()
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
+
 
 @implementation FSTMasterViewController
 
@@ -147,7 +147,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
+    
+    [self configureCell:cell
+             withObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+    
     return cell;
 }
 
@@ -250,7 +253,8 @@
 #if DELAY_UPDATING_CELLS
             dispatch_async(dispatch_get_main_queue(), ^{
 #endif
-                [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+                [self configureCell:[tableView cellForRowAtIndexPath:indexPath]
+                         withObject:anObject];
 #if DELAY_UPDATING_CELLS
             });
 #endif
@@ -326,9 +330,7 @@
 }
  */
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+- (void)configureCell:(UITableViewCell *)cell withObject:(NSManagedObject *)object {
     cell.textLabel.text = [[object valueForKey:@"number"] description];
 }
 
