@@ -28,6 +28,7 @@
 // Checks to run
 #define CHECK_FETCHED_OBJECTS 1
 #define CHECK_SECTIONS 1
+#define STRICT_SECTION_OBJECTS_CHECK 1
 #define CHECK_CELLS 1
 
 
@@ -297,16 +298,24 @@
     NSUInteger totalObjects = 0;
     
     for (id <NSFetchedResultsSectionInfo> aSection in self.fetchedResultsController.sections) {
-        NSAssert(aSection.objects.count > 0, @"Don't want empty sections");
-        NSAssert(aSection.numberOfObjects == aSection.objects.count, @"Might as well check the two counts are in sync");
+        NSUInteger numberOfObjects = aSection.numberOfObjects;
+        NSAssert(numberOfObjects > 0, @"Don't want empty sections");
         
         // Check all the objects are in the correct section
         NSString *name = aSection.name;
-        for (NSManagedObject *anObject in aSection.objects) {
+        
+        // I've found that very occasionally .numberOfObjects is out of sync with .objects
+        // To work around this, consider .numberOfObjects to be the truth
+        for (NSUInteger i=0; i<numberOfObjects; i++) {
             totalObjects++;
             
+            NSManagedObject *anObject = aSection.objects[i];
             NSAssert([[anObject fst_sectionName] isEqual:name], @"");
         }
+        
+#if STRICT_SECTION_OBJECTS_CHECK
+        NSAssert(aSection.numberOfObjects == aSection.objects.count, @"Might as well check the two counts are in sync");
+#endif
     }
     
     NSAssert(totalObjects == self.fetchedResultsController.fetchedObjects.count, @"You never know, they might differ");
