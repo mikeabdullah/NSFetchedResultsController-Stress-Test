@@ -23,6 +23,7 @@
 // How to respond to FRC changes
 #define MOVE_ROWS 0
 #define RELOAD_ROWS 0
+#define UPDATE_DIRECTLY_FROM_OBJECT 0
 #define DELAY_UPDATING_CELLS 0
 
 // Checks to run
@@ -254,8 +255,13 @@
 #if DELAY_UPDATING_CELLS
             dispatch_async(dispatch_get_main_queue(), ^{
 #endif
+#if UPDATE_DIRECTLY_FROM_OBJECT
                 [self configureCell:[tableView cellForRowAtIndexPath:indexPath]
                          withObject:anObject];
+#else
+                [self configureCell:[tableView cellForRowAtIndexPath:indexPath]
+                         withObject:[controller objectAtIndexPath:indexPath]];
+#endif
 #if DELAY_UPDATING_CELLS
             });
 #endif
