@@ -94,7 +94,7 @@
     for (NSIndexPath *aPath in self.tableView.indexPathsForVisibleRows) {
         NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:aPath];
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:aPath];
-        if (cell) NSAssert([cell.textLabel.text isEqual:[[object valueForKey:@"number"] description]], @"");
+        if (cell) NSAssert([cell.textLabel.text isEqual:[self descriptionForObject:object]], @"");
     }
 #endif
     
@@ -343,7 +343,11 @@
  */
 
 - (void)configureCell:(UITableViewCell *)cell withObject:(NSManagedObject *)object {
-    cell.textLabel.text = [[object valueForKey:@"number"] description];
+    cell.textLabel.text = [self descriptionForObject:object];
+}
+
+- (NSString *)descriptionForObject:(NSManagedObject *)object {
+    return [NSString stringWithFormat:@"%@ <%p>", [object valueForKey:@"number"], object];
 }
 
 @end
